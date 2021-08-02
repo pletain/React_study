@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const EventPractice_function = () => {
 	const [username, setUsername] = useState('');
-	const [message, setMessage] = useStaet('');
+	const [message, setMessage] = useState('');
 	const onChangeUsername = e => setUsername(e.target.value);
 	const onChangeMessage = e => setMessage(e.target.value);
 	const onClick = () => {
