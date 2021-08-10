@@ -36,7 +36,7 @@ class LifeCycleSample extends Component {
 
 	handleClick = () => {
 		this.setState({
-			number: this.state.number = 1
+			number: this.state.number + 1
 		});
 	}
 	
@@ -48,7 +48,7 @@ class LifeCycleSample extends Component {
 		return null;
 	}
 	
-	componentDidMount(prevProps, prevState, snapshot) {
+	componentDidUpdate(prevProps, prevState, snapshot) {
 		console.log('componentDidUpdate', prevProps, prevState);
 		if(snapshot){
 			 console.log('업데이트 되기 전 색상:', snapshot);
