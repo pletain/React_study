@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+
+function reducer(state, action) { // 다양한 컴포넌트 상황에 따라 다양한 상태를 다른 값으로 업데이트 해주고 싶을 때
+	switch (action.type) {
+		case 'INCREMENT':
+			return { value: state.value + 1};
+		case 'DECREMENT':
+			return { value: state.value - 1};
+		default:
+			return state;
+	}
+}
 
 const Counter = () => {
-	const [value, sstValue] = useState(0);
+	const [value, dispatch] = useReducer(reducer, { value: 0});
 	
 	return (
 	<div>
