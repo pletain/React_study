@@ -12,15 +12,15 @@ function reducer(state, action) { // 다양한 컴포넌트 상황에 따라 다
 }
 
 const Counter = () => {
-	const [value, dispatch] = useReducer(reducer, { value: 0});
+	const [state, dispatch] = useReducer(reducer, { value: 0});
 	
 	return (
 	<div>
 		<p>
-			현재 카운터 값은<b>{value}</b>입니다.
+			현재 카운터 값은<b>{state.value}</b>입니다.
 		</p>
-			<button onClick={() => sstValue(value + 1)}>+1</button>
-			<button onClick={() => sstValue(value - 1)}>-1</button>
+			<button onClick={ () => dispatch({type: 'INCREMENT' })}>+1</button>
+			<button onClick={() => dispatch({type: 'DECREMENT' })}>-1</button>
 		</div>
 	);
 };
