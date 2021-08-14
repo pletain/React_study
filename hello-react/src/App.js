@@ -1,8 +1,14 @@
-import React from 'react';
-import Info from './Hooks_8/Info.js';
+import React,  { Component } from 'react';
+import SassComponent from './Component_Styling/SassComponent';
 
-const App = () => {
-	return <Info />;
-};
+class App extends Component {
+	render() {
+	return (
+		<div>
+			<SassComponent />
+		</div>
+	);
+	}
+}
 
 export default App;
