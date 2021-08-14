@@ -1,32 +1,21 @@
-//변수 사용하기
-$red: #fa5252;
-$orange: #fd7e14;
-$green: #40c057;
-
-//믹스인 만들기
-@mixin square($size) {
-	$calculated: 32px * $size;
-	width: $calculated;
-	height: $calculated;
-}
-
+@import 'src/styles/utils';
 .SassComponent {
 	display: flex;
 	.box{
 		background: red;
 		cursor: pointer;
 		transition: all 0.3s ease-in;
-		.red {
+		&.red {
 			background: $red;
 			@include square(1);
 		}
-		.orange {
+		&.orange {
 			background: $orange;
-			@incldue square(2);
+			@include square(2);
 		}
-		.green {
+		&.green {
 			background: $green;
-			@incldue square(2);
+			@include square(3);
 		}
 		&:hover{
 			background: black;
