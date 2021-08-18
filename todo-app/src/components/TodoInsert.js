@@ -18,7 +18,7 @@ const TodoInsert = ({ onInsert }) => {
 		//이를 방지하기 위해 아래 함수를 호출
 		e.preventDefault();
 	},
-	[onInsert, value],
+	[onInsert, value], 
 	);
 	
 	return (
