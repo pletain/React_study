@@ -25,7 +25,7 @@ const App = () => {
 			</li>
 		</ul>
 		<Route path="/" component={Home} exact={true}/>
-		<Route path="/about, '/info'" component={About} />
+		<Route path={['/about', '/info']} component={About} />
 		<Route path="/profile/:username" component={Profile} />
 	</div>
 	);
