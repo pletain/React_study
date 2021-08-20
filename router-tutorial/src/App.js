@@ -11,11 +11,14 @@ const App = () => {
 			<Link to="/">홈</Link>
 			</li>
 			<li>
-			<Link to="/about">소개</Link>
+			<Link to="/about">소개1</Link>
+			</li>
+			<li>
+			<Link to="/info">소개2</Link>
 			</li>
 		</ul>
 		<Route path="/" component={Home} exact={true}/>
-		<Route path="/about" component={About} />
+		<Route path="/about, '/info'" component={About} />
 	</div>
 	);
 };
