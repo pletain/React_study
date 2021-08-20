@@ -14,12 +14,12 @@ const App = () => {
 	e=> {
 		const { name, value } = e.target;
 		setForm(
-		produce(form, draft => {
+		produce(draft => {
 			draft[name] = value;
 		})
 		);
 	},
-	[form]
+	[]
 	);
 	
 	const onSubmit = useCallback(
@@ -32,7 +32,7 @@ const App = () => {
 		};
 		
 		setData(
-		produce(data, draft=> {
+		produce(draft=> {
 			draft.array.push(info);
 		})
 		);
@@ -43,18 +43,18 @@ const App = () => {
 		});
 		nextId.current += 1;
 	},
-	[data, form.name, form.username]
+	[form.name, form.username]
 	);
 	
 	const onRemove = useCallback(
 	id=>{
 		setData(
-		produce(data, draft => {
+		produce(draft => {
 			draft.array.splice(draft.array.findIndex(info => info.id === id), 1);
 		})
 		);
 	},
-	[data]
+	[]
 	);
 	
 	return(
