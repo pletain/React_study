@@ -6,19 +6,20 @@ const App = () => {
 	const onClick = async () => {
 		try {
 			const response = await axios.get(
-			'https://jsonplaceholder.typicode.com/todos/1',
+			'https://newsapi.org/v2/top-headlines?country=kr&apiKey=4f24aa45e8b34ffdb9e0e062b60bc18d',
 			);
 			setData(response.data);
 		} catch (e) {
 			console.log(e);
 		}
 	};
+	
 	return (
 		<div>
 			<div>
 				<button onClick={onClick}>불러오기</button>
 			</div>
-			{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true} />}
+			{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}
 		</div>
 	);
 };
