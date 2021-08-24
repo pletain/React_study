@@ -1,0 +1,1 @@
+colsole.log('hello parcel');
