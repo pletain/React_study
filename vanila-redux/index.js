@@ -50,3 +50,37 @@ function reducer(state = initialState, action) {
 }
 
 const store = createStore(reducer);
+
+const render = () => {
+	const state = store.getState(); //현재 상태를 불러옵니다.
+	//토글 처리
+	if (state.toggle) {
+		divToggle.classList.add('active');
+	} else {
+		divToggle.classList.remove('active');
+	}
+	//카운터처리
+	counter.innerText = state.counter;
+};
+
+
+
+
+//상태가 업데이트될 때마다 호출
+//리액트의 render 함수와 다르게 html로 이미 만들어진 UI 속성을 상태에 따라 변경
+render();
+store.subscribe(render);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
