@@ -1,20 +1,12 @@
+import { createStore } from 'redux';
 const divToggle = document.querySelector('.toggle');
 const counter = document.querySelector('h1');
-const btnIncrease = document.querySelectro('#increase');
+const btnIncrease = document.querySelector('#increase');
 const btnDecrease = document.querySelector('#decrease');
 
 const TOGGLE_SWITCH = 'TOGGLE_SWITCH';
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
-
-const toggleSwitch = () => {{ type: TOGGLE_SWITCH }};
-const increase = difference => ({ type: INCREASE, difference });
-const decrease = () => ({ type: DECREASE });
-
-const initialState = {
-	toggle: false,
-	counter: 0
-};
 
 const toggleSwitch = () => ({ type: TOGGLE_SWITCH });
 const increase = difference => ({ type: INCREASE, difference });
@@ -32,7 +24,7 @@ function reducer(state = initialState, action) {
 		case TOGGLE_SWITCH:
 			return {
 				...state, //불변성 유지를 해 주어야 합니다.
-				toggle: !.state.toggle
+				toggle: !state.toggle
 			};
 		case INCREASE:
 			return {
