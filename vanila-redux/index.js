@@ -69,9 +69,18 @@ const render = () => {
 //상태가 업데이트될 때마다 호출
 //리액트의 render 함수와 다르게 html로 이미 만들어진 UI 속성을 상태에 따라 변경
 render();
+//상태가 바뀔 때마다 render함수가 호출 되도록 함
 store.subscribe(render);
 
-
+divToggle.onclick = () => {
+	store.dispatch(toggleSwitch());
+};
+btnIncrease.onclick = () => {
+	store.dispatch(increase(1));
+};
+btnDecrease.onclick = () => {
+	store.dispatch(decrease());
+}
 
 
 
