@@ -56,9 +56,7 @@ function todos(state = initialState, action) {
 		case INSERT:
 			return {
 				...state,
-				todos: state.todos.mpa(todo => 
-				todo.id === action.id ? {...todo, done: !todo.done } : todo
-				)
+				todos: state.todos.concat(action.todo)
 			};
 		case TOGGLE:
 			return {
