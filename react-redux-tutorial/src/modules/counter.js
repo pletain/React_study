@@ -1,4 +1,4 @@
-import { createAction } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 
 //액션 타입 정의하기
 const INCREASE = 'counter/INCREASE';
