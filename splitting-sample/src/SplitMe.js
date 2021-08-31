@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SpliteME = () => {
+const SpliteMe = () => {
 	return <div>SpliteMe</div>;
 };
 
