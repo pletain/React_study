@@ -1,11 +1,11 @@
 import React form 'react';
 import logo from './logo.svg';
 import './App.css';
-import notify from './notify';
 
 function App() {
 	const onClick = () => {
-		notify();
+		import('./notify').then(ressult => result.default()); //import 함수를 이용하면 Promise를 반환
+		// main 파일 안에 저장하지 않고 파일을 따로 분리시켜서 저장함.
 	};
   return (
     <div className="App">
