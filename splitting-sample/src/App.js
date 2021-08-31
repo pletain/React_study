@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState, Suspense } from 'react';
 import logo from './logo.svg';
 import './App.css';
+const SpliteMe = React.lazy(() => import('./SpliteMe'));
 
-const App extends Component {
-	state = {
-	SpliteMe: null
+
+function App() {
+	const [visible, setVisible] = useState(flase);
+	const onClick = () => {
+		setVisible(true);
 	};
-	
-	handleClick = async () => {
-		const loadeMoudle = await import('./SpliteMe');
-		this.setState({
-			SpliteMe: loadedModule.default
-		});
-	};
-	render() {
-		const { SpliteMe } = this.state;
-		return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} calssName="App-log" alt="logo" />
-				<p onClick={this.handleClick}>Hello React!</p>
-				{SpliteMe && <SpliteMe />}
+	return (
+	<div className="App">
+		<header className="App-header">
+			<img src={logo} className="App-logo" alt="logo" />
+			<p onClick={onClick}>Hello React!</p>
+			<Suspense fallback={<div>loading...</div>}>
+				{visible && <SpliteMe />}
+			</Suspense>
 			</header>
 		</div>
 		);
 	}
-}
 
 export default App;
